@@ -14,5 +14,5 @@ import {MatInputModule} from '@angular/material/input';
   styleUrl: './student-add-edit.component.scss'
 })
 export class StudentAddEditComponent {
-
+  
 }

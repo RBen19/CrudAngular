@@ -1,18 +1,33 @@
-<p>student-add-edit works!</p>
 <div mat-dialog-title>
-    <h2 mat-dialog-title-content>
-        <span>Edit Student</span>
-        <span>Add Student</span>
-    </h2>
+    <h4 mat-dialog-title-content class="text-center" >
+        <span>Edit and Add Student</span>     
+    </h4>
 </div>
-<div mat-dialog-content>
-     
-    <mat-form-field appearance="outline">
-        <mat-label>Input</mat-label>
-        <input matInput>
-      </mat-form-field>
+<div mat-dialog-content class="content">
+    <div class="row">
+        <div class="col-md-4">
+          <mat-form-field appearance="fill"> 
+            <mat-label>Nom</mat-label>
+            <input matInput type="text" required>
+          </mat-form-field>
+        </div>
+        |||||||
+        <div class="col-md-4">
+          <mat-form-field appearance="fill">
+            <mat-label>Prénom</mat-label>
+            <input matInput type="text" required>
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field appearance="fill">
+            <mat-label>Classe</mat-label>
+            <input matInput type="text" required>
+          </mat-form-field>
+        </div>
+      </div>
+   
 </div>
 <div mat-dialog-actions>
     <button class="btn btn-primary">save</button>
-    <button>cancel</button>
+    <button class="btn btn-warning">cancel</button>
 </div>
