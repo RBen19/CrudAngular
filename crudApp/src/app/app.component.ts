@@ -8,7 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {StudentAddEditComponent } from './student-add-edit/student-add-edit.component';
 import {MatInputModule} from '@angular/material/input';
-
+import {MatSelectModule} from '@angular/material/select';
 @Component({
   selector: 'app-root',
   imports: [
@@ -17,7 +17,8 @@ import {MatInputModule} from '@angular/material/input';
             MatButtonModule,
             MatDialogModule,
             MatFormFieldModule,
-            MatInputModule
+            MatInputModule,
+            MatSelectModule
           ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

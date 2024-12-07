@@ -11,17 +11,22 @@
             <input matInput type="text" required>
           </mat-form-field>
         </div>
-        |||||||
+        ||
         <div class="col-md-4">
-          <mat-form-field appearance="fill">
-            <mat-label>Prénom</mat-label>
-            <input matInput type="text" required>
+          <mat-form-field>
+            <mat-label>Prenom</mat-label>
+            <input matInput type="text">
           </mat-form-field>
         </div>
         <div class="col-md-4">
-          <mat-form-field appearance="fill">
+          <mat-form-field>
             <mat-label>Classe</mat-label>
-            <input matInput type="text" required>
+            <mat-select>
+              @for (classe of classes; track classes ) {
+                <mat-option [value]="classe">{{classe}}</mat-option>
+              }
+               
+            </mat-select>
           </mat-form-field>
         </div>
       </div>
@@ -29,5 +34,6 @@
 </div>
 <div mat-dialog-actions>
     <button class="btn btn-primary">save</button>
+    <span style="color:white">||</span>
     <button class="btn btn-warning">cancel</button>
 </div>
