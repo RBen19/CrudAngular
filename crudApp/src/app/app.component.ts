@@ -9,6 +9,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {StudentAddEditComponent } from './student-add-edit/student-add-edit.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import { HttpClientModule } from '@angular/common/http';
+import { StudentService } from './services/student.service';
 @Component({
   selector: 'app-root',
   imports: [
@@ -18,15 +20,19 @@ import {MatSelectModule} from '@angular/material/select';
             MatDialogModule,
             MatFormFieldModule,
             MatInputModule,
-            MatSelectModule
+            MatSelectModule,
+            HttpClientModule
           ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'crudApp';
-  constructor(private _dialog: MatDialog){}
+  constructor(private _dialog: MatDialog,private _studentServices :StudentService){}
   openAddEditStudentsFrom() {
     this._dialog.open(StudentAddEditComponent);
+  }
+  getALLStudent(){
+    this._studentServices.getAllStudents()
   }
 }
