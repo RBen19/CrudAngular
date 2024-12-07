@@ -37,6 +37,7 @@ export class StudentAddEditComponent {
    submitData(){
     if(this.studentFrom.valid){
       console.log(this.studentFrom.value)
+
     }
    }
 }
