@@ -21,21 +21,9 @@ export class StudentAddEditComponent {
   // fromGroup l'ensemble des champs d'un formulaire
   studentFrom :FormGroup;
    classes: string[] =[
-        'L1GL',
-        'L2GL',
-        'L3GL',
-        'L4GL',
-        'M1GL',
-        'M2GL',
-        'L1RI',
-        'L2RI',
-        'L3RI',
-        'L4RI',
-        'M1RI',
-        'M2RI',
-        'DITI3',
-        'DITI4',
-        'DITI5'
+       'GL',
+       'RI',
+       'DITI'
     ];
     // initialisation du formulaire studentFrom
    constructor(private _fb: FormBuilder) {
@@ -45,5 +33,10 @@ export class StudentAddEditComponent {
           classe:''
       })
     
+   }
+   submitData(){
+    if(this.studentFrom.valid){
+      console.log(this.studentFrom.value)
+    }
    }
 }
