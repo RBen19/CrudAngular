@@ -1,0 +1,181 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "students": [
+    {
+      "id": "bf6e",
+      "nom": "lib",
+      "prenom": "lib",
+      "classe": "RI"
+    },
+    {
+      "id": "dec4",
+      "nom": "lib",
+      "prenom": "lib",
+      "classe": "RI"
+    },
+    {
+      "id": "eccc",
+      "nom": "lib",
+      "prenom": "lib",
+      "classe": "RI"
+    },
+    {
+      "id": "a585",
+      "nom": "lib",
+      "prenom": "lib",
+      "classe": "RI"
+    },
+    {
+      "id": "07c1",
+      "nom": "lib",
+      "prenom": "lib",
+      "classe": "RI"
+    },
+    {
+      "id": "e4d8",
+      "nom": "lib",
+      "prenom": "lib",
+      "classe": "RI"
+    },
+    {
+      "id": "3ad5",
+      "nom": "lib",
+      "prenom": "lib",
+      "classe": "RI"
+    },
+    {
+      "id": "5df5",
+      "nom": "lib",
+      "prenom": "lib",
+      "classe": "RI"
+    },
+    {
+      "id": "9a1f",
+      "nom": "lib",
+      "prenom": "lib",
+      "classe": "RI"
+    },
+    {
+      "id": "3558",
+      "nom": "lib",
+      "prenom": "lib",
+      "classe": "GL"
+    },
+    {
+      "id": "77b4",
+      "nom": "lib",
+      "prenom": "lib",
+      "classe": "GL"
+    },
+    {
+      "id": "47c9",
+      "nom": "lib",
+      "prenom": "lib",
+      "classe": "GL"
+    },
+    {
+      "id": "1ba3",
+      "nom": "lib",
+      "prenom": "lib",
+      "classe": "GL"
+    },
+    {
+      "id": "3c9f",
+      "nom": "lib",
+      "prenom": "lib",
+      "classe": "GL"
+    },
+    {
+      "id": "a112",
+      "nom": "lib",
+      "prenom": "lib",
+      "classe": "GL"
+    },
+    {
+      "id": "7186",
+      "nom": "lib",
+      "prenom": "lib",
+      "classe": "GL"
+    },
+    {
+      "id": "ba28",
+      "nom": "lib",
+      "prenom": "lib",
+      "classe": "GL"
+    },
+    {
+      "id": "da14",
+      "nom": "lib",
+      "prenom": "az",
+      "classe": "RI"
+    },
+    {
+      "id": "da39",
+      "nom": "r",
+      "prenom": "r",
+      "classe": "RI"
+    },
+    {
+      "id": "d601",
+      "nom": "r",
+      "prenom": "r",
+      "classe": "RI"
+    },
+    {
+      "id": "9220",
+      "nom": "r",
+      "prenom": "r",
+      "classe": "RI"
+    },
+    {
+      "id": "d159",
+      "nom": "ee",
+      "prenom": "e",
+      "classe": "RI"
+    },
+    {
+      "id": "2f43",
+      "nom": "ee",
+      "prenom": "e",
+      "classe": "RI"
+    },
+    {
+      "id": "e73d",
+      "nom": "lib",
+      "prenom": "lib",
+      "classe": "RI"
+    },
+    {
+      "id": "f90e",
+      "nom": "Beni Sage",
+      "prenom": "BON ROSINARD",
+      "classe": "GL"
+    }
+  ]
+}

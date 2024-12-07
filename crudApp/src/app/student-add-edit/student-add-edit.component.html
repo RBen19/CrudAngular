@@ -1,0 +1,43 @@
+<div mat-dialog-title>
+    <h4 mat-dialog-title-content class="text-center" >
+        <span>Edit and Add Student</span>     
+    </h4>
+</div>
+<!--ajout du formulaire et des fromControlName -->
+<form [formGroup]="studentFrom" (ngSubmit)="submitData()" action="">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <div class="col-md-4">
+              <mat-form-field appearance="fill"> 
+                <mat-label>Nom</mat-label>
+                <input matInput type="text" required="required" formControlName="nom">
+              </mat-form-field>
+            </div>
+            ||
+            <div class="col-md-4">
+              <mat-form-field>
+                <mat-label>Prenom</mat-label>
+                <input matInput type="text" required="required" formControlName="prenom">
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field>
+                <mat-label>Classe</mat-label>
+                <mat-select formControlName="classe">
+                  @for (classe of classes; track classes ) {
+                    <mat-option [value]="classe">{{classe}}</mat-option>
+                  }
+                  
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+      
+    </div>
+    <div mat-dialog-actions>
+
+    <button class="btn btn-primary" type="submit">save</button>
+    <span style="color:white">||</span>
+    <button class="btn btn-warning">cancel</button>
+</div>
+</form>
