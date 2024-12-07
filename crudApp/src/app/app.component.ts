@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+import {OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -26,13 +27,33 @@ import { StudentService } from './services/student.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  /*
+    dans le cycle de vie du component il y a ngOnInit qui permet de 
+    bien initialiser le composant et de s'assurer qu'il est pret et fonctionnel
+
+    il sert a initialiser le composant et aussi pour charger des données une fois que 
+    le composant est pret et fonctionnelle.
+
+    il permet aussi de quasiment garentir l'execution car il n'est appelé 
+    qu'une fois apres que le composant soit integralement pret  
+
+    selon ma comprehension de la chose en l'état actuel
+  */
   title = 'crudApp';
   constructor(private _dialog: MatDialog,private _studentServices :StudentService){}
+  ngOnInit(): void {
+    this.getALLStudent();
+  }
   openAddEditStudentsFrom() {
     this._dialog.open(StudentAddEditComponent);
   }
   getALLStudent(){
-    this._studentServices.getAllStudents()
+    this._studentServices.getAllStudents().subscribe({
+      next:(res)=>{
+        console.log(res);
+      },
+      error:console.log
+    })
   }
 }
