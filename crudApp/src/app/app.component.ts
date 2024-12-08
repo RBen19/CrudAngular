@@ -61,7 +61,13 @@ export class AppComponent implements OnInit{
     this.getALLStudent();
   }
   openAddEditStudentsFrom() {
-    this._dialog.open(StudentAddEditComponent);
+    const dialogRef= this._dialog.open(StudentAddEditComponent);
+    // pour faire communiquer ce composant et celui de edit-add-students
+    dialogRef.afterClosed().subscribe((result) => {
+      if(result){
+        this.getALLStudent();
+      }
+    });
   }
   getALLStudent(){
     this._studentServices.getAllStudents().subscribe({
@@ -76,13 +82,22 @@ export class AppComponent implements OnInit{
   }
 
   deletedStudent(id :string){
-    this._studentServices.deleteStudent(id).subscribe({
-      next:() => {
-        alert("Supression reussit");
-        this.getALLStudent();
-      },
-      error:console.log
-    });
+    if(!confirm('L\'etudiant est le point d\'etre supprimer vouslez vous continez ?')){
+      alert("suppresion annuler");
+    }else{
+      this._studentServices.deleteStudent(id).subscribe({
+        next:() => {
+          alert("Supression reussit");
+          this.getALLStudent();
+        },
+        error:console.log
+      });
+    }
+   
+  }
+  openEditStudentsFrom(data:any) {
+     this._dialog.open(StudentAddEditComponent,{data:data});
+     this.getALLStudent();
   }
    /*
     dans le cycle de vie du component il y a ngOnInit qui permet de 

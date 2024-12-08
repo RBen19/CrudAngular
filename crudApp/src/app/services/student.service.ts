@@ -23,4 +23,7 @@ export class StudentService {
     // pour tous usage de variable pour de raison de lisibilité et de flexibilité utiliser des backticks
     return this.httpclient.delete(`http://localhost:3000/students/${id}`);
   }
+  updateStudent(id : string,data:any){
+    return this.httpclient.put(`http://localhost:3000/students/${id}`,data);
+  }
 }

@@ -28,52 +28,28 @@
   },
   "students": [
     {
-      "id": "eccc",
-      "nom": "lib",
-      "prenom": "lib",
-      "classe": "RI"
+      "nom": "akounamatata",
+      "prenom": "mm",
+      "classe": "DITI",
+      "id": "07c1"
     },
     {
-      "id": "a585",
-      "nom": "lib",
-      "prenom": "lib",
-      "classe": "RI"
+      "nom": "libhhh",
+      "prenom": "libhhh",
+      "classe": "RI",
+      "id": "3ad5"
     },
     {
-      "id": "07c1",
-      "nom": "lib",
+      "nom": "libihci",
       "prenom": "lib",
-      "classe": "RI"
-    },
-    {
-      "id": "3ad5",
-      "nom": "lib",
-      "prenom": "lib",
-      "classe": "RI"
-    },
-    {
-      "id": "5df5",
-      "nom": "lib",
-      "prenom": "lib",
-      "classe": "RI"
+      "classe": "RI",
+      "id": "5df5"
     },
     {
       "id": "9a1f",
       "nom": "lib",
       "prenom": "lib",
       "classe": "RI"
-    },
-    {
-      "id": "3558",
-      "nom": "lib",
-      "prenom": "lib",
-      "classe": "GL"
-    },
-    {
-      "id": "77b4",
-      "nom": "lib",
-      "prenom": "lib",
-      "classe": "GL"
     },
     {
       "id": "47c9",
@@ -160,9 +136,9 @@
       "classe": "DITI"
     },
     {
-      "id": "5b24",
-      "nom": "L",
-      "prenom": "Y",
+      "id": "fd81",
+      "nom": "libmo",
+      "prenom": "libbi",
       "classe": "RI"
     }
   ]

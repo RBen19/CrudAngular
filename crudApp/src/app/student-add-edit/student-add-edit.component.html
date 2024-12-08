@@ -36,8 +36,8 @@
     </div>
     <div mat-dialog-actions>
 
-    <button class="btn btn-primary" type="submit">save</button>
+    <button class="btn btn-primary" type="submit">{{_data ? 'Mettre a jour' : 'Ajouter'}}</button>
     <span style="color:white">||</span>
-    <button class="btn btn-warning">cancel</button>
+    <button class="btn btn-warning" mat-dialog-close="flase">Annuler</button>
 </div>
 </form>
