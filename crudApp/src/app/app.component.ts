@@ -37,8 +37,6 @@ interface student{
             HttpClientModule,
             MatTableModule,
             MatPaginatorModule,
-            MatTableModule,
-            MatPaginatorModule,
             MatSortModule
           ],
   templateUrl: './app.component.html',
@@ -50,8 +48,10 @@ export class AppComponent implements OnInit{
   displayedColumns: string[] = ['id', 'nom', 'prenom', 'classe'];
 
  
+
   
     dataSource!: MatTableDataSource<student>;
+   
 
     @ViewChild(MatPaginator) paginator!: MatPaginator;
     @ViewChild(MatSort) sort!: MatSort;
@@ -67,6 +67,8 @@ export class AppComponent implements OnInit{
     this._studentServices.getAllStudents().subscribe({
       next:(res) => {
           this.dataSource =new MatTableDataSource(res);
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
         console.log(res);
       },
       error:console.log
