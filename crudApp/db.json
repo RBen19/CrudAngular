@@ -28,18 +28,6 @@
   },
   "students": [
     {
-      "id": "bf6e",
-      "nom": "lib",
-      "prenom": "lib",
-      "classe": "RI"
-    },
-    {
-      "id": "dec4",
-      "nom": "lib",
-      "prenom": "lib",
-      "classe": "RI"
-    },
-    {
       "id": "eccc",
       "nom": "lib",
       "prenom": "lib",
@@ -53,12 +41,6 @@
     },
     {
       "id": "07c1",
-      "nom": "lib",
-      "prenom": "lib",
-      "classe": "RI"
-    },
-    {
-      "id": "e4d8",
       "nom": "lib",
       "prenom": "lib",
       "classe": "RI"
@@ -176,6 +158,12 @@
       "nom": "hello",
       "prenom": "world",
       "classe": "DITI"
+    },
+    {
+      "id": "5b24",
+      "nom": "L",
+      "prenom": "Y",
+      "classe": "RI"
     }
   ]
 }

@@ -19,7 +19,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatSort, MatSortModule} from '@angular/material/sort';
 interface student{
-  id: number,
+  id: string,
   nom: string,
   prenom: string,
   classe: string
@@ -45,11 +45,11 @@ interface student{
 export class AppComponent implements OnInit{
  
   title = 'crudApp';
-  displayedColumns: string[] = ['id', 'nom', 'prenom', 'classe'];
+  displayedColumns: string[] = ['id', 'nom', 'prenom', 'classe','action'];
 
  
 
-  
+    // ! pour dire que cela peut etre null
     dataSource!: MatTableDataSource<student>;
    
 
@@ -69,7 +69,17 @@ export class AppComponent implements OnInit{
           this.dataSource =new MatTableDataSource(res);
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
-        console.log(res);
+        //console.log(res);
+      },
+      error:console.log
+    });
+  }
+
+  deletedStudent(id :string){
+    this._studentServices.deleteStudent(id).subscribe({
+      next:() => {
+        alert("Supression reussit");
+        this.getALLStudent();
       },
       error:console.log
     });

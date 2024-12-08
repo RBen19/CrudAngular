@@ -5,6 +5,10 @@
     Ajouter un/une Etudiant(e)
   </button>
 </mat-toolbar>
+<br>
+
+<marquee behavior="" direction=""><h2><b>Bienvenue</b></h2></marquee>
+<br>
 <!--<mat-form-field>
   <mat-label>Filter</mat-label>
   <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
@@ -19,22 +23,35 @@
       <td mat-cell *matCellDef="let row"> {{row.id}} </td>
     </ng-container>
 
-    <!-- Progress Column -->
+    <!-- nom Column -->
     <ng-container matColumnDef="nom">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom </th>
       <td mat-cell *matCellDef="let row"> {{row.nom}}</td>
     </ng-container>
 
-    <!-- Name Column -->
+    <!-- prenom Column -->
     <ng-container matColumnDef="prenom">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Prenom </th>
       <td mat-cell *matCellDef="let row"> {{row.prenom}} </td>
     </ng-container>
 
-    <!-- Fruit Column -->
+    <!-- classe Column -->
     <ng-container matColumnDef="classe">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Classe </th>
       <td mat-cell *matCellDef="let row"> {{row.classe}} </td>
+    </ng-container>
+    
+    <!-- Actions Column -->
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
+        <td mat-cell *matCellDef="let row">
+          <button mat-icon-button style="color:rgb(99, 99, 20)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button style="color:rgb(203, 37, 15)" (click)="deletedStudent(row.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

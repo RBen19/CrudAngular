@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 interface student{
-  id: number,
+  id: string,
   nom: string,
   prenom: string,
   classe: string
@@ -18,5 +18,9 @@ export class StudentService {
   }
   getAllStudents(){
     return this.httpclient.get<student[]>('http://localhost:3000/students');
+  }
+  deleteStudent(id:string){
+    // pour tous usage de variable pour de raison de lisibilité et de flexibilité utiliser des backticks
+    return this.httpclient.delete(`http://localhost:3000/students/${id}`);
   }
 }
