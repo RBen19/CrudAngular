@@ -12,6 +12,18 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 import { StudentService } from './services/student.service';
+import {MatTableModule} from '@angular/material/table';
+import {AfterViewInit, ViewChild} from '@angular/core';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
+import {MatSort, MatSortModule} from '@angular/material/sort';
+interface student{
+  id: number,
+  nom: string,
+  prenom: string,
+  classe: string
+}
 @Component({
   selector: 'app-root',
   imports: [
@@ -22,13 +34,45 @@ import { StudentService } from './services/student.service';
             MatFormFieldModule,
             MatInputModule,
             MatSelectModule,
-            HttpClientModule
+            HttpClientModule,
+            MatTableModule,
+            MatPaginatorModule,
+            MatTableModule,
+            MatPaginatorModule,
+            MatSortModule
           ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit {
-  /*
+export class AppComponent implements OnInit{
+ 
+  title = 'crudApp';
+  displayedColumns: string[] = ['id', 'nom', 'prenom', 'classe'];
+
+ 
+  
+    dataSource!: MatTableDataSource<student>;
+
+    @ViewChild(MatPaginator) paginator!: MatPaginator;
+    @ViewChild(MatSort) sort!: MatSort;
+  constructor(private _dialog: MatDialog,private _studentServices :StudentService){}
+  
+  ngOnInit(): void {
+    this.getALLStudent();
+  }
+  openAddEditStudentsFrom() {
+    this._dialog.open(StudentAddEditComponent);
+  }
+  getALLStudent(){
+    this._studentServices.getAllStudents().subscribe({
+      next:(res) => {
+          this.dataSource =new MatTableDataSource(res);
+        console.log(res);
+      },
+      error:console.log
+    });
+  }
+   /*
     dans le cycle de vie du component il y a ngOnInit qui permet de 
     bien initialiser le composant et de s'assurer qu'il est pret et fonctionnel
 
@@ -40,20 +84,4 @@ export class AppComponent implements OnInit {
 
     selon ma comprehension de la chose en l'état actuel
   */
-  title = 'crudApp';
-  constructor(private _dialog: MatDialog,private _studentServices :StudentService){}
-  ngOnInit(): void {
-    this.getALLStudent();
-  }
-  openAddEditStudentsFrom() {
-    this._dialog.open(StudentAddEditComponent);
-  }
-  getALLStudent(){
-    this._studentServices.getAllStudents().subscribe({
-      next:(res)=>{
-        console.log(res);
-      },
-      error:console.log
-    })
-  }
 }
